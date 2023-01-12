@@ -16,21 +16,348 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="heading-primary">JavaScript Fundamentales - Part 1</h1>
-      <a class="btn" href="#modal">Click here to open popup</a>
-    </div>
-    <div id="modal" class="modal">
-      <div class="modal-header">
-        <h1 class="heading-primary">This is modal header</h1>
+      <header class="header">
+        <nav class="main__nav">
+          <div class="logo__container">
+            <img src="./img/logo.png" alt="Logo" class="logo" />
+          </div>
+          <ul class="lists">
+            <li class="list__item">
+              <a href="#section--features" class="main__nav--link">Features</a>
+            </li>
+            <li class="list__item">
+              <a href="#section--operations" class="main__nav--link"
+                >Operations</a
+              >
+            </li>
+            <li class="list__item">
+              <a href="#section--testimonials" class="main__nav--link"
+                >Testimonials</a
+              >
+            </li>
+            <li class="list__item">
+              <a href="#" class="main__nav--link btn btn--green btn--show-modal"
+                >Open Account</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="header__content">
+          <div class="header__content--text">
+            <h1 class="heading-primary mb-small">
+              When banking meets minimalist
+            </h1>
+            <h3 class="heading--tertiary mb-medium">
+              A simple banking experience for simpler life
+            </h3>
+            <a href="#" class="btn-text learn-more">Learn more &darr;</a>
+          </div>
+          <div class="header__content--images">
+            <img src="./img/hero.png" alt="" class="header__image" />
+          </div>
+        </div>
+      </header>
+      <main class="main">
+        <section class="section--features" id="section--features">
+          <div class="heading--wrapper">
+            <h4 class="heading--4">Features</h4>
+            <h2 class="heading--secondary">
+              Everything you need in a modern bank and more.
+            </h2>
+          </div>
+          <div class="feature">
+            <div class="feature--image--container">
+              <img
+                src="./img/digital-lazy.jpg"
+                alt="Digital"
+                class="feature--image"
+              />
+            </div>
+            <div class="feature--text--container">
+              <div class="feature__icon">
+                <svg>
+                  <use xlink:href="img/icons.svg#icon-monitor" />
+                </svg>
+              </div>
+              <h3 class="heading--tertiary">100% digital bank</h3>
+              <p class="paragraph feature--paragraph">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
+                quia consequatur vel sit minus modi odit quos, magnam autem,
+                aperiam molestiae odio eius animi id! Accusamus excepturi
+                impedit totam repellat.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature--text--container">
+              <div class="feature__icon">
+                <svg>
+                  <use xlink:href="img/icons.svg#icon-trending-up" />
+                </svg>
+              </div>
+              <h3 class="heading--tertiary">Watch your money grow</h3>
+              <p class="paragraph feature--paragraph">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
+                quia consequatur vel sit minus modi odit quos, magnam autem,
+                aperiam molestiae odio eius animi id! Accusamus excepturi
+                impedit totam repellat.
+              </p>
+            </div>
+
+            <div class="feature--image--container">
+              <img
+                src="./img/grow-lazy.jpg"
+                alt="Grow"
+                class="feature--image"
+              />
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature--image--container">
+              <img
+                src="./img/card-lazy.jpg"
+                alt="Card"
+                class="feature--image"
+              />
+            </div>
+            <div class="feature--text--container">
+              <div class="feature__icon">
+                <svg>
+                  <use xlink:href="img/icons.svg#icon-credit-card" />
+                </svg>
+              </div>
+              <h3 class="heading--tertiary">Free debit card included</h3>
+              <p class="paragraph feature--paragraph">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
+                quia consequatur vel sit minus modi odit quos, magnam autem,
+                aperiam molestiae odio eius animi id! Accusamus excepturi
+                impedit totam repellat.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section--operations" id="section--operations">
+          <div class="heading--wrapper">
+            <h4 class="heading--4">Operations</h4>
+            <h2 class="heading--secondary mb-medium">
+              Everything as simple as possible, but no simpler.
+            </h2>
+          </div>
+          <div class="tabs mb-small">
+            <div class="tab active">
+              <a href="#" class="tab--link tab--primary tab-1">
+                01 Instant Transfers</a
+              >
+            </div>
+            <div class="tab">
+              <a href="#" class="tab--link tab--secondary tab-2">
+                02 Instant Loans</a
+              >
+            </div>
+            <div class="tab">
+              <a href="#" class="tab--link tab--tertiary tab-3">
+                03 Insxtant Closing</a
+              >
+            </div>
+          </div>
+          <div class="tab__content tab__content--1 active">
+            <div class="operation__icon">
+              <svg>
+                <use xlink:href="img/icons.svg#icon-upload" />
+              </svg>
+            </div>
+            <h3 class="heading--tertiary tab--heading">
+              Tranfser money to anyone, instantly! No fees, no BS.
+            </h3>
+            <p class="paragraph tab--paragraph">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Reiciendis autem cupiditate laborum odit, tempore provident facere
+              saepe aut ut recusandae doloribus esse porro nesciunt. Dolorum
+              expedita nam mollitia aliquam alias?
+            </p>
+          </div>
+          <div class="tab__content tab__content--2">
+            <div class="operation__icon">
+              <svg>
+                <use xlink:href="img/icons.svg#icon-home" />
+              </svg>
+            </div>
+            <h3 class="heading--tertiary tab--heading">
+              Buy a home or make your dreams come true, with instant loans.
+            </h3>
+            <p class="paragraph tab--paragraph">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Reiciendis autem cupiditate laborum odit, tempore provident facere
+              saepe aut ut recusandae doloribus esse porro nesciunt. Dolorum
+              expedita nam mollitia aliquam alias?
+            </p>
+          </div>
+          <div class="tab__content tab__content--3">
+            <div class="operation__icon">
+              <svg>
+                <use xlink:href="img/icons.svg#icon-user-x" />
+              </svg>
+            </div>
+            <h3 class="heading--tertiary tab--heading">
+              No longer need your account? No problem! Close it instantly.
+            </h3>
+            <p class="paragraph tab--paragraph">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Reiciendis autem cupiditate laborum odit, tempore provident facere
+              saepe aut ut recusandae doloribus esse porro nesciunt. Dolorum
+              expedita nam mollitia aliquam alias?
+            </p>
+          </div>
+        </section>
+
+        <section class="section--testimonials" id="section--testimonials">
+          <h4 class="heading--4">Not Sure Yet?</h4>
+          <h2 class="heading--secondary mb-medium">
+            Millions of Bankists are already making their lifes simpler.
+          </h2>
+          <div class="carousel">
+            <div class="carousel-1">
+              <h3 class="heading--tertiary">Best financial decision ever</h3>
+              <p class="paragraph">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
+                molestiae unde est praesentium culpa, placeat voluptatem minima
+                quasi minus voluptates quam, itaque natus. Tempora ipsam in
+                aspernatur libero obcaecati nulla.
+              </p>
+              <div class="user">
+                <img src="img/user-1.jpg" alt="User 1" class="user--image" />
+                <div class="user--details">
+                  <p class="user--name">Subash Chandra</p>
+                  <p class="user--place">Delhi, India</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-2">
+              <h3 class="heading--tertiary">
+                The last step to become a complete minimalist
+              </h3>
+              <p class="paragraph">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
+                molestiae unde est praesentium culpa, placeat voluptatem minima
+                quasi minus voluptates quam, itaque natus. Tempora ipsam in
+                aspernatur libero obcaecati nulla.
+              </p>
+              <div class="user">
+                <img src="img/user-2.jpg" alt="User 2" class="user--image" />
+                <div class="user--details">
+                  <p class="user--name">Priyanshi Prajapati</p>
+                  <p class="user--place">Bangaluru, India</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-3">
+              <h3 class="heading--tertiary">
+                Finally free from old-school banks
+              </h3>
+              <p class="paragraph">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
+                molestiae unde est praesentium culpa, placeat voluptatem minima
+                quasi minus voluptates quam, itaque natus. Tempora ipsam in
+                aspernatur libero obcaecati nulla.
+              </p>
+              <div class="user">
+                <img src="img/user-3.jpg" alt="User 3" class="user--image" />
+                <div class="user--details">
+                  <p class="user--name">Anish Yaday</p>
+                  <p class="user--place">Himanchal Pradesh, India</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="arrow--left arrow">
+              <svg class="arrow--icon">
+                <use xlink:href="img/icons.svg#icon-arrow-left" />
+              </svg>
+            </div>
+
+            <div class="arrow--right arrow">
+              <svg class="arrow--icon">
+                <use xlink:href="img/icons.svg#icon-arrow-right" />
+              </svg>
+            </div>
+
+            <div class="dots">
+              <div class="dot dot--1"></div>
+              <div class="dot dot--2"></div>
+              <div class="dot dot--3"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <h2 class="heading--secondary footer--heading text--center text--white">
+          The best day to join bankist was one year ago. The second best is
+          today.
+        </h2>
+
+        <div class="open--account mb-small">
+          <a href="#" class="btn btn--green text--center btn--show-modal"
+            >Open your free account today!</a
+          >
+        </div>
+
+        <nav class="footer__nav mb-small">
+          <ul class="lists">
+            <li class="list__item">
+              <a href="" class="footer__nav--link">About</a>
+            </li>
+            <li class="list__item">
+              <a href="" class="footer__nav--link">Pricing</a>
+            </li>
+            <li class="list__item">
+              <a href="" class="footer__nav--link">Terms of use</a>
+            </li>
+            <li class="list__item">
+              <a href="" class="footer__nav--link">Privacy policy</a>
+            </li>
+            <li class="list__item">
+              <a href="" class="footer__nav--link">Careers</a>
+            </li>
+            <li class="list__item">
+              <a href="" class="footer__nav--link">Blogs</a>
+            </li>
+            <li class="list__item">
+              <a href="" class="footer__nav--link">Contact us</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="footer__logo">
+          <img src="img/icon.png" class="logo" alt="logo" />
+        </div>
+      </footer>
+
+      <div id="modal" class="modal">
+        <div class="modal--header">
+          <h1 class="heading-primary">This is modal header</h1>
+          <div
+            class="modal--close btn--close-modal"
+            role="button"
+            tabindex="0"
+          ></div>
+        </div>
+        <div class="modal--body">
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+            omnis natus, numquam iure vitae veniam ut unde eligendi iusto optio,
+            alias dolorum nesciunt dolorem eius delectus repellat ullam.
+            Perspiciatis, nihil!
+          </p>
+        </div>
+        <div class="modal--footer">
+          <button class="btn btn-close btn--close-modal">Close</button>
+        </div>
       </div>
-      <div class="modal-body">
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur
-          omnis natus, numquam iure vitae veniam ut unde eligendi iusto optio,
-          alias dolorum nesciunt dolorem eius delectus repellat ullam.
-          Perspiciatis, nihil!
-        </p>
-      </div>
+      <div class="backdrop" id="backdrop"></div>
     </div>
   </body>
 </html>
