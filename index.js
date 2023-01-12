@@ -47,3 +47,13 @@ document.querySelector(".learn-more").addEventListener("click", function (e) {
     behavior: "smooth"
   });
 });
+
+document
+  .querySelector(".main__nav--items")
+  .addEventListener("click", function (e) {
+    e.preventDefault();
+    const targetHref = e.target.getAttribute("href");
+    if (e.target.classList.contains("main__nav--link")) {
+      document.querySelector(targetHref).scrollIntoView({ behavior: "smooth" });
+    }
+  });
