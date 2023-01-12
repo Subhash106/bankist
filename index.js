@@ -57,3 +57,22 @@ document
       document.querySelector(targetHref).scrollIntoView({ behavior: "smooth" });
     }
   });
+
+document.querySelector(".tabs").addEventListener("click", function (e) {
+  e.preventDefault();
+
+  [...this.querySelectorAll(".tab--link")].forEach(tab => {
+    tab.classList.remove("active");
+  });
+
+  if (e.target.classList.contains("tab--link")) {
+    e.target.classList.add("active");
+
+    [...document.querySelectorAll(".tab--item")].forEach(item => {
+      item.classList.remove("active");
+    });
+    document
+      .querySelector(e.target.getAttribute("href"))
+      .classList.add("active");
+  }
+});
