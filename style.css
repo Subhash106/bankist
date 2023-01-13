@@ -52,6 +52,13 @@ body {
   justify-content: space-between;
   height: 6rem;
   padding: 0 1rem;
+  width: 100%;
+}
+
+.main__nav.sticky {
+  position: fixed;
+  background-color: white;
+  z-index: 111;
 }
 
 .logo__container {
@@ -139,10 +146,23 @@ body {
   align-items: center;
   width: 5.5rem;
   height: 5.5rem;
-  fill: var(--color-secondary-dark);
-  background: var(--color-secondary-2);
   border-radius: 50%;
   padding: 1rem;
+}
+
+.operation__icon--primary {
+  background-color: var(--color-primary-1);
+  fill: var(--color-primary-dark);
+}
+
+.operation__icon--secondary {
+  background: var(--color-secondary-1);
+  fill: var(--color-secondary-dark);
+}
+
+.operation__icon--tertiary {
+  background-color: var(--color-tertiary-1);
+  fill: var(--color-tertiary-dark);
 }
 
 .feature--image--container,
@@ -300,12 +320,14 @@ body {
 
 .section--features,
 .section--operations {
-  padding: 10rem 0;
+  padding: 6rem 0;
+  border-top: 1px solid #ddd;
 }
 
 .section--testimonials {
-  padding: 10rem 0 2rem 0;
+  padding: 6rem 0 2rem 0;
   margin-bottom: 4rem;
+  border-top: 1px solid #ddd;
 }
 
 .tabs {

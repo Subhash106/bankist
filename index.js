@@ -2,6 +2,35 @@
 
 const modal = document.getElementById("modal");
 const backdrop = document.getElementById("backdrop");
+const mainNav = document.querySelector(".main__nav");
+const sectionFeatures = document.querySelector(".section--features");
+const header = document.querySelector(".header");
+
+function openModal() {
+  modal.classList.add("open");
+  backdrop.classList.add("open");
+}
+
+function closeModal() {
+  modal.classList.remove("open");
+  backdrop.classList.remove("open");
+}
+
+function handleHover(e) {
+  if (e.target.classList.contains("main__nav--link")) {
+    const link = e.target;
+
+    const siblings = link
+      .closest(".main__nav")
+      .querySelectorAll(".main__nav--link");
+    const logo = link.closest(".main__nav").querySelector(".logo");
+
+    siblings.forEach(lnk => {
+      if (link !== lnk) lnk.style.opacity = this;
+    });
+    logo.style.opacity = this;
+  }
+}
 
 document.querySelectorAll(".tab__link").forEach(tab => {
   tab.addEventListener("click", function (e) {
@@ -15,16 +44,6 @@ document.querySelectorAll(".tab__link").forEach(tab => {
   });
 });
 
-function openModal() {
-  modal.classList.add("open");
-  backdrop.classList.add("open");
-}
-
-function closeModal() {
-  modal.classList.remove("open");
-  backdrop.classList.remove("open");
-}
-
 document.querySelectorAll(".btn--show-modal").forEach(btn => {
   btn.addEventListener("click", openModal);
 });
@@ -35,15 +54,11 @@ document.querySelectorAll(".btn--close-modal").forEach(btn => {
 
 document.querySelector(".learn-more").addEventListener("click", function (e) {
   e.preventDefault();
-  const sectionFeatures = document
-    .querySelector(".section--features")
-    .getBoundingClientRect();
-  console.log(window.scrollY);
+  const sectionFeaturesCoords = sectionFeatures.getBoundingClientRect();
 
-  console.log("sectionFeatures", sectionFeatures);
   window.scrollTo({
-    top: sectionFeatures.top + window.scrollY,
-    left: sectionFeatures.left + window.scrollX,
+    top: sectionFeaturesCoords.top + window.scrollY,
+    left: sectionFeaturesCoords.left + window.scrollX,
     behavior: "smooth"
   });
 });
@@ -76,3 +91,37 @@ document.querySelector(".tabs").addEventListener("click", function (e) {
       .classList.add("active");
   }
 });
+
+mainNav.addEventListener("mouseover", handleHover.bind(0.5));
+
+mainNav.addEventListener("mouseout", handleHover.bind(1));
+
+// Hiding and showing nav menu using scroll
+// window.addEventListener("scroll", function () {
+//   console.log(window.scrollY);
+//   if (window.scrollY >= 100) {
+//     mainNav.classList.add("sticky");
+//   } else {
+//     mainNav.classList.remove("sticky");
+//   }
+// });
+
+// Hiding and showing nav menu using IntersectionObserver
+const obsCallBack = entries => {
+  entries.forEach(entry => {
+    if (entry.intersectionRatio === 0 && !entry.isIntersecting) {
+      mainNav.classList.add("sticky");
+    } else {
+      mainNav.classList.remove("sticky");
+    }
+  });
+};
+
+const obsOptions = {
+  root: null,
+  threshold: 0,
+  rootMargin: "-60px"
+};
+
+const observer = new IntersectionObserver(obsCallBack, obsOptions);
+observer.observe(header);
