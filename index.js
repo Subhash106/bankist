@@ -125,3 +125,22 @@ const obsOptions = {
 
 const observer = new IntersectionObserver(obsCallBack, obsOptions);
 observer.observe(header);
+
+const sectionObserver = new IntersectionObserver(
+  function (entries, observer) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove("section--hidden");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    root: null,
+    threshold: 0.15
+  }
+);
+
+document.querySelectorAll(".section").forEach(section => {
+  sectionObserver.observe(section);
+});

@@ -105,7 +105,7 @@ body {
 }
 
 .header__image {
-  width: 50%;
+  width: 100%;
   float: right;
 }
 
@@ -321,13 +321,21 @@ body {
 .section--features,
 .section--operations {
   padding: 6rem 0;
-  border-top: 1px solid #ddd;
 }
 
 .section--testimonials {
   padding: 6rem 0 2rem 0;
   margin-bottom: 4rem;
+}
+
+.section {
   border-top: 1px solid #ddd;
+  transition: all 1s ease-in-out;
+}
+
+.section--hidden {
+  opacity: 0;
+  transform: translateY(8rem);
 }
 
 .tabs {
