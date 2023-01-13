@@ -148,5 +148,29 @@ document.querySelectorAll(".section").forEach(section => {
 window.addEventListener("load", function () {
   const heroImage = document.querySelector(".header__image");
   heroImage.src = heroImage.dataset.src;
-  heroImage.classList.remove("image--lazy");
+  heroImage.addEventListener("load", function () {
+    heroImage.classList.remove("image--lazy");
+  });
+});
+
+const imageObserver = new IntersectionObserver(
+  function (entries, observer) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+
+      entry.target.src = entry.target.dataset.src;
+      entry.target.addEventListener("load", function () {
+        entry.target.classList.remove("image--lazy");
+      });
+      observer.unobserve(entry.target);
+    });
+  },
+  {
+    root: null,
+    threshold: 0.9
+  }
+);
+
+document.querySelectorAll(".feature--image").forEach(img => {
+  imageObserver.observe(img);
 });

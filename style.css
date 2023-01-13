@@ -110,7 +110,7 @@ body {
 }
 
 .image--lazy {
-  filter: blur(3px);
+  filter: blur(10px);
 }
 
 .feature {
