@@ -174,3 +174,57 @@ const imageObserver = new IntersectionObserver(
 document.querySelectorAll(".feature--image").forEach(img => {
   imageObserver.observe(img);
 });
+
+const sliders = document.querySelectorAll(".carousel");
+const numberOfSlides = sliders.length;
+
+function goToSlide(slide) {
+  sliders.forEach((slider, index) => {
+    slider.style.transform = `translateX(${(index - slide) * 100}%)`;
+  });
+}
+
+function nextSlide() {
+  if (currentSlider === numberOfSlides - 1) {
+    currentSlider = 0;
+  } else {
+    currentSlider++;
+  }
+
+  goToSlide(currentSlider);
+}
+
+function prevSlide() {
+  if (currentSlider === 0) {
+    currentSlider = numberOfSlides - 1;
+  } else {
+    currentSlider--;
+  }
+
+  goToSlide(currentSlider);
+}
+
+goToSlide(0);
+
+let currentSlider = 0;
+document.querySelector(".arrow--right").addEventListener("click", nextSlide);
+document.querySelector(".arrow--left").addEventListener("click", prevSlide);
+
+document.addEventListener("keydown", function (e) {
+  e.key === "ArrowRight" && nextSlide();
+  e.key === "ArrowLeft" && prevSlide();
+});
+
+document.querySelector(".dots").addEventListener("click", function (e) {
+  if (e.target.classList.contains("dot")) {
+    e.target
+      .closest(".dots")
+      .querySelectorAll(".dot")
+      .forEach(el => el.classList.remove("active"));
+    e.target.classList.add("active");
+
+    const currentSlide = e.target.dataset.carousel;
+
+    goToSlide(currentSlide);
+  }
+});

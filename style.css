@@ -424,9 +424,20 @@ body {
   position: relative;
 }
 
-.carousel {
-  width: 70%;
+.carousels {
+  width: 60%;
   margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  height: 20rem;
+}
+
+.carousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  transition: all 0.3s ease-in-out;
 }
 
 .user {
@@ -489,6 +500,11 @@ body {
   height: 1rem;
   border-radius: 50%;
   background-color: var(--font-color-5);
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: var(--font-color-4);
 }
 
 .footer {
@@ -511,10 +527,6 @@ body {
 
 .footer__nav--link:hover {
   transform: translateY(-2px);
-}
-
-.dot.active {
-  background-color: var(--font-color-4);
 }
 
 .open--account,
