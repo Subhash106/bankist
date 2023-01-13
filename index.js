@@ -144,3 +144,9 @@ const sectionObserver = new IntersectionObserver(
 document.querySelectorAll(".section").forEach(section => {
   sectionObserver.observe(section);
 });
+
+window.addEventListener("load", function () {
+  const heroImage = document.querySelector(".header__image");
+  heroImage.src = heroImage.dataset.src;
+  heroImage.classList.remove("image--lazy");
+});

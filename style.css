@@ -109,14 +109,32 @@ body {
   float: right;
 }
 
+.image--lazy {
+  filter: blur(3px);
+}
+
 .feature {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 8rem;
 }
 
 .feature:not(:last-child) {
   margin-bottom: 2rem;
+}
+
+.feature--paragraph {
+  margin-top: 1rem;
+}
+
+.feature--image--container,
+.feature--text--container {
+  flex-basis: 50%;
+}
+
+.feature--image {
+  width: 100%;
 }
 
 .feature__icon {
@@ -130,10 +148,6 @@ body {
   border-radius: 50%;
   padding: 1rem;
   margin-bottom: 2rem;
-}
-
-.feature--paragraph {
-  margin-top: 1rem;
 }
 
 .operation--paragraph {
@@ -163,11 +177,6 @@ body {
 .operation__icon--tertiary {
   background-color: var(--color-tertiary-1);
   fill: var(--color-tertiary-dark);
-}
-
-.feature--image--container,
-.feature--text--container {
-  flex-basis: 50%;
 }
 
 .heading--wrapper {
