@@ -184,6 +184,16 @@ function goToSlide(slide) {
   });
 }
 
+function activateCurrentDot(slide) {
+  document.querySelectorAll(".dot").forEach(dot => {
+    dot.classList.remove("active");
+  });
+
+  document
+    .querySelector(`.dot[data-carousel="${slide}"]`)
+    .classList.add("active");
+}
+
 function nextSlide() {
   if (currentSlider === numberOfSlides - 1) {
     currentSlider = 0;
@@ -192,6 +202,7 @@ function nextSlide() {
   }
 
   goToSlide(currentSlider);
+  activateCurrentDot(currentSlider);
 }
 
 function prevSlide() {
@@ -202,6 +213,7 @@ function prevSlide() {
   }
 
   goToSlide(currentSlider);
+  activateCurrentDot(currentSlider);
 }
 
 goToSlide(0);
@@ -217,14 +229,8 @@ document.addEventListener("keydown", function (e) {
 
 document.querySelector(".dots").addEventListener("click", function (e) {
   if (e.target.classList.contains("dot")) {
-    e.target
-      .closest(".dots")
-      .querySelectorAll(".dot")
-      .forEach(el => el.classList.remove("active"));
-    e.target.classList.add("active");
-
     const currentSlide = e.target.dataset.carousel;
-
     goToSlide(currentSlide);
+    activateCurrentDot(currentSlide);
   }
 });
